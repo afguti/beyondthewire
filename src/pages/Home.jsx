@@ -2,10 +2,10 @@ const Home = () => {
   const posts = [
     {
       id: 1,
-      title: "Your First Blog Post",
-      preview: "This is a preview of your first blog post...",
-      date: "Mar 15, 2024",
-      category: "General",
+      title: "The 3 way handshake",
+      preview: "In this blog we will explore the 3 way handshake protocol...",
+      date: "Dec 28, 2024",
+      category: "Networking",
       level: "Level 100"
     }
   ]
