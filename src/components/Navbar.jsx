@@ -1,9 +1,20 @@
+import { useState } from 'react'
+
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
   return (
     <nav className="navbar">
       <div className="nav-content">
         <h1 className="nav-title">Beyond the wire</h1>
-        <ul className="nav-links">
+        <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
+          <span className={`hamburger ${isMenuOpen ? 'open' : ''}`}></span>
+        </button>
+        <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
           <li><a href="/">HOME</a></li>
           <li><a href="/categories">CATEGORIES</a></li>
           <li><a href="/tags">TAGS</a></li>
