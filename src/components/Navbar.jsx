@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="nav-content">
-        <h1 className="nav-title">Beyond the wire</h1>
+        <h1 className="nav-title">Beyond the circuit</h1>
         <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
           <span className={`hamburger ${isMenuOpen ? 'open' : ''}`}></span>
         </button>
