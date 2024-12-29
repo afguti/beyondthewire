@@ -3,8 +3,9 @@ import fm from 'front-matter';
 
 const md = new MarkdownIt();
 const posts = import.meta.glob('../content/posts/*.md', { 
-  eager: true,
-  as: 'raw'
+  query: '?raw',
+  import: 'default',
+  eager: true
 });
 
 export const getAllPosts = () => {
