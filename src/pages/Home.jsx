@@ -1,30 +1,37 @@
-const Home = () => {
-  const posts = [
-    {
-      id: 1,
-      title: "The 3 way handshake",
-      preview: "In this blog we will explore the 3 way handshake protocol...",
-      date: "Dec 28, 2024",
-      category: "Networking",
-      level: "Level 100"
-    }
-  ]
+import { getAllPosts } from '../utils/posts';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
+function Home() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const loadPosts = () => {
+      const allPosts = getAllPosts();
+      setPosts(allPosts);
+    };
+    loadPosts();
+  }, []);
 
   return (
-    <div className="home-container">
-      {posts.map(post => (
-        <article key={post.id} className="post-preview">
-          <h2>{post.title}</h2>
-          <p>{post.preview}</p>
-          <div className="post-meta">
-            <span>{post.date}</span>
-            <span>{post.category}</span>
-            <span>{post.level}</span>
-          </div>
-        </article>
-      ))}
+    <div className="home">
+      <h1>Blog Posts</h1>
+      <div className="posts-list">
+        {posts.map((post) => (
+          <article key={post.slug} className="post-preview">
+            <h2>{post.frontmatter.title}</h2>
+            <time>{new Date(post.frontmatter.date).toLocaleDateString()}</time>
+            {post.frontmatter.description && (
+              <p>{post.frontmatter.description}</p>
+            )}
+            <Link to={`/blog/${post.slug}`} className="read-more">
+              Read more
+            </Link>
+          </article>
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
-export default Home 
+export default Home; 
