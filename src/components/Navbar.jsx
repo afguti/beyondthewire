@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -10,7 +11,11 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="nav-content">
-        <h1 className="nav-title">Beyond the circuit</h1>
+        <div className="header-container">
+            <ThemeToggle />
+            <h1 className="nav-title">Beyond the circuit</h1>       
+        </div>
+        
         <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
           <span className={`hamburger ${isMenuOpen ? 'open' : ''}`}></span>
         </button>
