@@ -5,7 +5,7 @@ description: "Understanding how TCP establishes connections"
 ---
 
 # Three way handshake lab
----
+
 This lab is to demonstrate the TCP 3 way handshake protocol sequence. We will setup an HTTP server and a CLIENT. Both are running Linux Alpine.
 
 [FIGURE]

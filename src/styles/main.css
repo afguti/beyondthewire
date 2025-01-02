@@ -1,4 +1,3 @@
-
 /* Add dark mode variables */
 :root {
   --background: #ffffff;
@@ -234,12 +233,32 @@ img {
     position: relative;
     padding-top: 1rem;
   }
+
+  .blog-post pre {
+    padding: 0.2rem;
+    background-color: var(--post-bg-color);
+    overflow-x: auto;          /* Enable horizontal scrolling */
+    width: 80vw;
+  }
+
 }
 
 .blog-post {
-  max-width: 800px;
+  max-width: 100%;
   margin: 2rem auto;
   padding: 0 1rem;
+  overflow-x: hidden;
+}
+
+/* Code block styles */
+.blog-post pre code {
+  display: block;
+  overflow-x: auto;
+  padding: 1rem;
+  width: 100%;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .blog-post h1 {
@@ -304,4 +323,5 @@ img {
 
 .read-more:hover {
   text-decoration: underline;
-} 
+}
+
